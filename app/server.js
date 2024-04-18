@@ -6,7 +6,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,POST');
   res.header('Access-Control-Allow-Headers',
-  'Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization');
+    'Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization');
   next();
 });
 
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
   connection.query(
     `SELECT * FROM mydb1 WHERE 지역 = '${req.query.name}'`,
-    function(err, results, fields) {
+    function (err, results, fields) {
       console.log(results);
       console.log(fields);
 
