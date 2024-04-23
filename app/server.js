@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
+const config = require('./config/config.js');
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -10,19 +11,19 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
+app.get('/search', (req, res) => {
   console.log("name: " + req.query.name);
 
   // create the connection to database
   const connection = mysql.createConnection({
-    host: '192.168.111.31',
-    user: 'myuser',
-    password: 'mypassword!',
-    database: 'wbdb'
+    host: config.DB_IP,
+    user: config.USER_NAME,
+    password: config.USER_PASSWORD,
+    database: config.DATABASE_NAME
   });
 
   connection.query(
-    `SELECT * FROM mydb1 WHERE 지역 = '${req.query.name}'`,
+    `SELECT * FROM ${config.TABLE_NAME} WHERE Name = '${req.query.name}'`,
     function (err, results, fields) {
       console.log(results);
       console.log(fields);
