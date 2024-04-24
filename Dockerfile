@@ -10,7 +10,7 @@ RUN ["chmod", "+x", "/script.sh"]
 RUN npm install
 
 # Default environment values
-ENV DB_IP="192.168.111.21"
+ENV DB_IP="192.168.111.31"
 ENV USER_NAME="myuser"
 ENV USER_PASSWORD="mypassword!"
 ENV DATABASE_NAME="wbdb"
