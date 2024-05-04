@@ -1,6 +1,6 @@
-const DB_IP = '192.168.111.31';
+const DB_IP = 'wbdb.c1wcssiiki5n.ap-northeast-1.rds.amazonaws.com';
 const USER_NAME = 'myuser';
-const USER_PASSWORD = 'mypassword!';
+const USER_PASSWORD = 'mypassword!@';
 const DATABASE_NAME = 'wbdb';
 const TABLE_NAME = 'USER';
 
